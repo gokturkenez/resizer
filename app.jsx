@@ -108,7 +108,7 @@ function LogoResizer() {
     for (const size of sizes) {
       for (const format of size.formats) {
         const blob = await resizeImage(uploadedImage, size.width, size.height, format);
-        await downloadImage(blob, `gamivo-logo-${size.name}.${format}`);
+        await downloadImage(blob, `logo-${size.name}.${format}`);
         await new Promise(resolve => setTimeout(resolve, 300));
       }
     }
@@ -120,7 +120,7 @@ function LogoResizer() {
     if (!uploadedImage) return;
     
     const blob = await resizeImage(uploadedImage, size.width, size.height, format);
-    await downloadImage(blob, `gamivo-logo-${size.name}.${format}`);
+    await downloadImage(blob, `logo-${size.name}.${format}`);
   };
 
   return (
@@ -129,7 +129,7 @@ function LogoResizer() {
         <div className="bg-white rounded-2xl shadow-xl p-8">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-2">Logo Resizer</h1>
-            <p className="text-gray-600">Upload your GAMIVO logo and download all required sizes</p>
+            <p className="text-gray-600">Upload your logo and download all required sizes</p>
             <p className="text-sm text-orange-600 mt-2">✓ Maintains aspect ratio - no squeezing!</p>
           </div>
 
